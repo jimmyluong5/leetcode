@@ -45,4 +45,4 @@ print(sol.isPalindrome(121))
 print('\n')
 
 print(sol.isPalindrome(100))
-
+#testing 
