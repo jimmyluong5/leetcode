@@ -33,6 +33,8 @@ class Solution:
 
 sol = Solution()
 print(sol.containsDuplicates(nums1))
-
 print('\n')
 print(sol.containsDuplicates(nums2))
+
+
+    
