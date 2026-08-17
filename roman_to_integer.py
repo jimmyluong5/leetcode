@@ -20,9 +20,9 @@ Given a roman numeral, convert it to an integer.
  """
 
 
-s1 = ['III']
-s2 = ['IV'] #4
-s3 = ['MCMXCIV'] #1994
+s1 = 'III'
+s2 = 'IV' #4
+s3 = 'MCMXCIV' #1994
 class solution():
     def romantoint(self, s):
 
