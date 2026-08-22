@@ -6,8 +6,6 @@ The new list should be made up of nodes from list1 and list2.
 
 Example 1:
 
-
-
 Input: list1 = [1,2,4], list2 = [1,3,5]
 
 Output: [1,1,2,3,4,5]
@@ -17,48 +15,66 @@ Input: list1 = [], list2 = [1,2]
 
 Output: [1,2] """
 
-#create node class
+# create node class
 class node():
-    def __init__(self, val = -1, next = None):
+    def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
-#list1 and list2 are the heads of list1 and list2
-list1= [1, 2, 4]
-list2= [1, 3, 5]
-class Solution:
-    def merge(self, list1, list2):
-        #create dummy node and pointers
+    # String representation for printing the linked list
+    def __repr__(self):
+        vals = []
+        curr = self
+        while curr:
+            vals.append(str(curr.val))
+            curr = curr.next
+        return "[" + ", ".join(vals) + "]"
 
+# Helper function to build a linked list from a Python list
+def build_linked_list(arr):
+    if not arr:
+        return None
+    dummy = node()
+    curr = dummy
+    for val in arr:
+        curr.next = node(val)
+        curr = curr.next
+    return dummy.next
+
+class Solution():
+    def merge(self, list1, list2):
+        # list1 and list2 are head nodes of linked lists
         p1 = list1
         p2 = list2
 
-        #create dummy node
-        dummy = node() #automatically has the value of -1 and next of None
+        # create dummy node
+        dummy = node()
+        curr = dummy # automatically has value 0 and next None
         
-        #create curr ptr which helps us link values together
+        # compare node values and link nodes
         while p1 and p2:
             if p1.val < p2.val:
                 curr.next = p1
                 p1 = p1.next
-                curr = curr.next
-
-            else: #p2.val<=p1.val
+            else: # p2.val <= p1.val
                 curr.next = p2
-                p2=p2.next
-                curr = curr.next
+                p2 = p2.next
+            curr = curr.next
         
-        #one of the pointers hit null, based on drawing it out, curr will behind the ptr that hit null
-
-        if p1 == None:
+        # link remaining elements if any
+        if p1 is None:
             curr.next = p2
-            return dummy.next
-    
-        if p2 ==None:
+        else:
             curr.next = p1
-            return dummy.next
+
+        return dummy.next
 
 
-sol = Solution
+# Build input linked lists from Python arrays
+list1 = build_linked_list([1, 2, 4])
+list2 = build_linked_list([1, 3, 5])
+
+sol = Solution()
 print(sol.merge(list1, list2))
+
 
