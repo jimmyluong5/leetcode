@@ -69,3 +69,5 @@ print(q[0])
 
 #peak on the right side
 print(q[-1])
+
+#use can put anything in stacks and queues, like strings, tuples, dictionaries like anything.
