@@ -34,6 +34,10 @@ class Solution():
         res = []
         stk = [root] #initialize it with the root 
 
+        #check edge case
+        if root == None:
+            return []
+
         while stk: #while its not empty (not while stk!=None, it'll never hit None)
             #we need to pop the first element each time we iterate in the loop, and set
             #curr to the first element in the call stack to pop

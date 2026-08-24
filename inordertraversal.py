@@ -10,7 +10,8 @@ class TreeNode:
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         """
-        Recursive Inorder Traversal (Left -> Root -> Right)
+        Recursive Inorder Traversal (Left ->
+        Root -> Right)
         """
         res = []
         
@@ -39,3 +40,6 @@ if __name__ == "__main__":
 
     solution = Solution()
     print("Inorder Traversal:", solution.inorderTraversal(root))
+
+
+
