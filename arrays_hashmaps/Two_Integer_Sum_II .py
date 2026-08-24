@@ -27,3 +27,4 @@ class Solution():
 sol = Solution()
 print(sol.twosum(arr, 4)) #should be [1,3]
 
+
