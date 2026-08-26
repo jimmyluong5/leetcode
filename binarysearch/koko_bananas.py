@@ -43,5 +43,5 @@ class Solution():
                 left = k+1
         return res
 sol = Solution()
-print(sol.mineatingspeed(piles,6))
-print(sol.mineatingspeed(piles1,8))
+print(sol.mineatingspeed(piles,6)) #should be 23
+print(sol.mineatingspeed(piles1,8)) #should be 4
