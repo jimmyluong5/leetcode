@@ -33,8 +33,8 @@ def MergeSort(arr):
         right_arr = arr[mid:len(arr)] #means from mid to the end index.
 
     #recursion call MergeSort on the left and right arrays
-    MergeSort(left_arr)
-    MergeSort(right_arr)
+    left_sorted=MergeSort(left_arr)
+    right_sorted=MergeSort(right_arr)
 
     #merge step
     #recall that we want to compare the left most element in the left and right arrays
