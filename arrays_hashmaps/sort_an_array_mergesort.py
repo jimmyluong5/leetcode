@@ -10,7 +10,7 @@
 #divide and conquer algorithm
 
 #merge sort is O( nlog(n) )
-
+#O(n) space because you create arrays
 #general principle
 #1 split array in half
 #2 call merge sort on each half to sort them recursively
