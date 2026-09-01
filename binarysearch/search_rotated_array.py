@@ -21,6 +21,7 @@ Example 3:
 Input: nums = [1], target = 0
 Output: -1
 """
+nums = [4,5,6,7,0,1,2]
 
 class Solution():
     def search(self, nums, target):
@@ -32,12 +33,32 @@ class Solution():
             #mid ptr
             mid = left+(right-left)//2
 
+            if target == nums[mid]:
+                return mid
+
+
             #check left array
             if nums[left] <= nums[mid]:
                 #check if target in between this interval
                 if nums[left] <= target <= nums[mid]:
                     #move right ptr
                     right = mid-1
-                else: 
+                else: #means the target is in the right sorted array.
                     left = mid+1
-                    
+            else: #in right sorted array
+
+                #check if target in between mid and right
+                if nums[mid] <= target <= nums[right]:
+                    #move left ptr
+                    left = mid+1
+                else:
+                    right = mid-1 #in left half
+        return -1
+
+sol = Solution()
+print(sol.search(nums, 4)) #should be 0
+print('\n')
+print(sol.search(nums, 3)) #should be -1
+print('\n')
+print(sol.search(nums, 7)) #should be 3
+ 
