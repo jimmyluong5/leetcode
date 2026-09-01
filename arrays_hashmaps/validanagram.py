@@ -35,3 +35,4 @@ class Solution():
         return map1==map2 #if true returns True, else False
 sol = Solution()
 print(sol.anagram(s,t))
+
