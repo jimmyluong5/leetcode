@@ -16,7 +16,7 @@ Example 2:
 Input: nums = [2,2,1,1,1,2,2]
 Output: 2 """
 
-nums = [2, 2, 1, 1, 1, 2, 2]
+nums = [2, 2, 1, 1, 2, 2, 9]
 #if the last element was a 9, the algorithm wouldn't work.
 
 class Solution:
@@ -24,20 +24,15 @@ class Solution:
         #create hashmap
         map = {}
         n = len(nums)
-        #for hashmaps you should always increase the freq first
-        #because if the number already exists in the hashmap then 
-        #the loop is actually the 2nd iteration
         for num in nums:
             if num in map:
-                #increase the frequency
-                map[num]+=1
-
-                #check for condition
-                if map[num] > n//2:
+                #increase frequency first
+                map[num] +=1
+                if map[num] == n//2:
                     return num
             else:
-                #add it to the hashmap
-                map[num] = 1
+                #add it to hashmap
+                map[num] =1
         return num
        
        
