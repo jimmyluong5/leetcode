@@ -16,24 +16,27 @@ Example 2:
 Input: nums = [2,2,1,1,1,2,2]
 Output: 2 """
 
-nums = [2, 2, 1, 1, 2, 2, 9]
-#if the last element was a 9, the algorithm wouldn't work.
+nums=[5,5,1,1,1,5,5]
 
 class Solution:
     def majorityElement(self, nums):
-        #create hashmap
-        map = {}
         n = len(nums)
+        map = {}
+
+        #edge case
+        if n == 1:
+            return nums[0]
         for num in nums:
             if num in map:
-                #increase frequency first
-                map[num] +=1
-                if map[num] == n//2:
+                if map[num] == n//2: #majority element guaranteed to exist so this must be true.
                     return num
+                else:
+                    #increase the frequency
+                    map[num] +=1
             else:
-                #add it to hashmap
-                map[num] =1
+                map[num] = 1
         return num
+                    
        
        
 sol = Solution()
