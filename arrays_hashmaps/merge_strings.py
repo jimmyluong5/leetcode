@@ -68,3 +68,48 @@ class Solution():
         return res
 sol = Solution()
 print(sol.mergeStrings(word1,word2))
+
+
+
+#you can do it without the if statements
+class solution1:
+    def mergestrings(self, word1, word2):
+        #determine the lengths of the strings
+        n = len(word1)
+        m = len(word2)
+
+        #create the result string
+        res = " " * (m+n)
+
+        #turn string into array
+        res = list(res)
+
+        #initialize ptrs
+        i, j, k  = 0, 0, 0
+        while i < n and j < m:
+            #just append the characters one by one and move the k ptr
+            res[k] = word1[i]
+            k+=1
+            i+=1
+
+            res[k] = word2[j]
+            k+=1
+            j+=1
+        
+        #if one of the strings hit the length
+        while i == n and j < m:
+            res[k] = word2[j]
+            k+=1
+            j+=1
+        while j == m  and i < n:
+            res[k]= word1[i]
+            k+=1
+            i+=1
+        
+        #turn the result back into string
+        res = "".join(res)
+        return res
+print("\n")
+
+sol2 = solution1()
+print(sol2.mergestrings(word1, word2))
