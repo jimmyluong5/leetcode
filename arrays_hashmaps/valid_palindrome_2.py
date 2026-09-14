@@ -40,7 +40,7 @@ class Solution():
                 if is_pal(left+1, right) == True:
                     return True
                 elif is_pal(left, right-1):
-                    return true
+                    return True
                 else: 
                     return False
             #move the pointers
@@ -53,3 +53,15 @@ print("\n")
 print(sol.validpalindrome(s1))
 print("\n")
 print(sol.validpalindrome(s2))
+
+""" if is_pal(left+1, right) == True:
+                    return True
+                elif is_pal(left, right-1):
+                    return True
+                else: 
+                    return False 
+                    
+                you can replace this with
+                return is_pal(left, right-1) or is_pal(left+1, right)   
+                    """
+            
