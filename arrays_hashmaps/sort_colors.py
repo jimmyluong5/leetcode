@@ -43,8 +43,8 @@ class Solution():
         def partition(arr, left, right):
             i = left
             j = right-1
-
             pivot = arr[right]
+            
             while i < j:
                 while i < right and arr[i]<pivot:
                     #we just move i
