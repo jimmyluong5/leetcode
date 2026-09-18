@@ -49,7 +49,7 @@ class Solution():
                 while i < right and arr[i]<pivot:
                     #we just move i
                     i+=1
-                while j > left and arr[j] > pivot:
+                while j > left and arr[j] >= pivot:
                     j-=1
                 
                 if i < j:
