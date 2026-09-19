@@ -31,3 +31,23 @@ Constraints:
 -(2^31) <= nums[i] <= ((2^31)-1)
 0 <= k <= 100,000 """
 
+#this question is actually easy intuitively
+#
+
+class Solution():
+    def rotate(self, nums):
+        #reverse it once
+        #then reverse the first k elements from 0 to k-1
+        #then reverse the n-k elements
+        n = len(nums)
+        k%=n
+
+        def helper(arr, left, right):
+            while left<right:
+                arr[left], arr[right] = arr[right], arr[left]
+                left+=1
+                right-=1
+            return arr
+        #we reverse once
+
+
