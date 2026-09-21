@@ -61,3 +61,10 @@ print("\n")
 print(sol.rotate(nums1, 3)) #if you use the same array, the previous old values will be there
 #arrays are mutable in python.
 #should be [5,6,7,1,2,3,4]
+
+#another solution would be 
+#we do array slicing so we just add the array for the first k elements
+#then add the array from the n-k elements which is the rest of the elements thats not first k
+#nums[:] = nums[n-k:] + nums[:n-k]
+#nums[n-k:] is the last elements
+#nums[:n-k] is the first k elements, cuz 0 to n-k which where n-k is the number of the elements left
