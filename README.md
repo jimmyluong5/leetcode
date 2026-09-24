@@ -1,2 +1,4 @@
 Working on my data structures and algorithm skills.
-1
+
+- So far
+- Using the Neetcode roadmap, just working on learning trees then going on downwards.
