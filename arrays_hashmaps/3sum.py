@@ -33,5 +33,6 @@ Constraints:
 -10^5 <= nums[i] <= 10^5
 """
 
+#gonna solve this today, im thinkings its a two pointer and hashmap implmementation
 
 
