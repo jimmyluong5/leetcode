@@ -1,4 +1,6 @@
-from typing import Optional, List
+""" Input: root = [1,2,3,4,5,6,7]
+
+Output: [4,2,5,1,6,3,7] """
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -7,39 +9,43 @@ class TreeNode:
         self.left = left
         self.right = right
 
-class Solution:
-    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        """
-        Recursive Inorder Traversal (Left ->
-        Root -> Right)
-        """
+root = TreeNode(1)
+A = TreeNode(2)
+B = TreeNode(3)
+
+C = TreeNode(4)
+D = TreeNode(5)
+E = TreeNode(6)
+F = TreeNode(7)
+
+root.left = A
+root.right = B
+
+A.left = C
+A.right = D
+
+B.left = E
+B.right = F
+
+
+
+
+
+
+
+class Solution():
+    def inorderTraversal(self, root):
         res = []
-        
-        def inorder(node):
-            if not node:
-                return
-            inorder(node.left)
-            res.append(node.val)
-            inorder(node.right)
+        def inorder(root):
+            if root == None:
+                return None
             
+            inorder(root.left)
+            res.append(root.val)
+            inorder(root.right)
+        
         inorder(root)
         return res
 
-if __name__ == "__main__":
-    # Constructing example tree:
-    #       1
-    #      / \
-    #     2   3
-    #    / \
-    #   4   5
-    root = TreeNode(1)
-    root.left = TreeNode(2)
-    root.right = TreeNode(3)
-    root.left.left = TreeNode(4)
-    root.left.right = TreeNode(5)
-
-    solution = Solution()
-    print("Inorder Traversal:", solution.inorderTraversal(root))
-
-
-
+sol = Solution()
+print(sol.inorderTraversal(root))
