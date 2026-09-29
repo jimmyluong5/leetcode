@@ -1,41 +1,48 @@
-from typing import Optional, List
+""" Input: root = [1,2,3,4,5,6,7]
 
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+Output: [1,2,4,5,3,6,7] """
+
+
+class TreeNode():
+    def __init__ (self, val = 0, left = None, right = None):
         self.val = val
         self.left = left
         self.right = right
 
-class Solution:
-    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        """
-        Recursive Preorder Traversal (Root -> Left -> Right)
-        """
+root = TreeNode(1)
+A = TreeNode(2)
+B = TreeNode(3)
+
+C = TreeNode(4)
+D = TreeNode(5)
+E = TreeNode(6)
+F = TreeNode(7)
+
+root.left = A
+root.right = B
+
+A.left = C
+A.right = D
+
+B.left = E
+B.right = F
+
+
+
+class Solution():
+
+    def preorderTraversal(self, root):
+
         res = []
-        
-        def preorder(node):
-            if not node:
-                return
-            res.append(node.val)
-            preorder(node.left)
-            preorder(node.right)
+        def preorder(root):
+            if root == None:
+                return None
             
+            res.append(root.val)
+            preorder(root.left)
+            preorder(root.right)
+        
         preorder(root)
         return res
-
-if __name__ == "__main__":
-    # Constructing example tree:
-    #       1
-    #      / \
-    #     2   3
-    #    / \
-    #   4   5
-    root = TreeNode(1)
-    root.left = TreeNode(2)
-    root.right = TreeNode(3)
-    root.left.left = TreeNode(4)
-    root.left.right = TreeNode(5)
-
-    solution = Solution()
-    print("Preorder Traversal:", solution.preorderTraversal(root))
+sol=Solution()
+print(sol.preorderTraversal(root))
