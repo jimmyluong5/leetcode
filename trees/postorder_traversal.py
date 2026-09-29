@@ -1,41 +1,44 @@
-from typing import Optional, List
 
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+""" Input: root = [1,2,3,4,5,6,7]
+
+Output: [4,5,2,6,7,3,1] """
+
+class TreeNode():
+    def __init__ (self, val = 0, left = None, right = None):
         self.val = val
         self.left = left
         self.right = right
 
-class Solution:
-    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        """
-        Recursive Postorder Traversal (Left -> Right -> Root)
-        """
+root = TreeNode(1)
+A = TreeNode(2)
+B = TreeNode(3)
+
+C = TreeNode(4)
+D = TreeNode(5)
+E = TreeNode(6)
+F = TreeNode(7)
+
+root.left = A
+root.right = B
+
+A.left = C
+A.right = D
+
+B.left = E
+B.right = F
+
+class Solution():
+    def postorderTraversal(self, root):
+
         res = []
-        
-        def postorder(node):
-            if not node:
-                return
-            postorder(node.left)
-            postorder(node.right)
-            res.append(node.val)
-            
+        def postorder(root):
+            if root == None:
+                return None
+            postorder(root.left)
+            postorder(root.right)
+            res.append(root.val)
         postorder(root)
         return res
 
-if __name__ == "__main__":
-    # Constructing example tree:
-    #       1
-    #      / \
-    #     2   3
-    #    / \
-    #   4   5
-    root = TreeNode(1)
-    root.left = TreeNode(2)
-    root.right = TreeNode(3)
-    root.left.left = TreeNode(4)
-    root.left.right = TreeNode(5)
-
-    solution = Solution()
-    print("Postorder Traversal:", solution.postorderTraversal(root))
+sol=Solution()
+print(sol.postorderTraversal(root))        
