@@ -2,7 +2,13 @@
 
 The length of a path between two nodes in a binary tree is the number of edges between the nodes. Note that the path can not include the same node twice.
 
-Given the root of a binary tree root, return the diameter of the tree. """
+Given the root of a binary tree root, return the diameter of the tree. 
+
+Input: root = [1,null,2,3,4,5]
+
+Output: 3
+
+"""
 
 
 
@@ -12,10 +18,24 @@ class TreeNode():
         self.left = left
         self.right = right
 
+root = TreeNode(1)
+A = TreeNode(2)
+B = TreeNode(3)
+C = TreeNode(4)
+D = TreeNode(5)
+
+root.left = None
+root.right = A
 
 
+A.left = B
+A.right = C
 
+C.left = None
+C.right = None
 
+B.left = D
+B.right = None
 
 class Solution():
     def diameterOfBinaryTree(self, root):
@@ -42,5 +62,6 @@ class Solution():
         return self.max_diameter
 
 sol=Solution()
+print(sol.diameterOfBinaryTree(root))
 
 
