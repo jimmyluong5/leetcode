@@ -5,14 +5,44 @@
 
 Output: [[1],[2,3],[4,5,6,7]] """
 
-from collections import deque
+import collections
 
 class TreeNode():
     def __init__(self, val = 0, left = None, right = None):
         self.val = val
         self.left = left
         self.right = right
-    
+
+
+root = TreeNode(1)
+A = TreeNode(2)
+B = TreeNode(3)
+
+C = TreeNode(4)
+D = TreeNode(5)
+
+E = TreeNode(6)
+F = TreeNode(7)
+
+root.left = A
+root.right = B
+
+A.left = C
+A.right = D
+
+C.left = None
+C.right = None
+D.left = None
+D.right = None
+
+B.left = E
+B.right = F
+
+E.left = None
+E.right = None
+
+
+
 
 class Solution():
     def levelOrder(self, root):
